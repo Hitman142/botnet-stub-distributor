@@ -2,7 +2,7 @@
 import socket               
 
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)         
+s = socket.socket()         
 host = socket.gethostname()
 TCP_IP = '127.0.0.1'
 ip = socket.gethostbyname(socket.gethostname())
@@ -11,20 +11,22 @@ s.bind((TCP_IP, port))
 print(host)
 print(ip)
 s.listen(5)
-f = open("memes.bat",'wb')
+f = open("memes.txt",'wb')
+c, addr = s.accept()
+s.close
+print ("Got connection from", addr)
+print("Receiving")
 while True:
-   c, addr = s.accept()     
-   print ("Got connection from", addr)
-   c.send("You are in")
+   data = c.recv(1024).decode()
+   if not data:
+      break
+   print("from connected user: " + str(data))
+   data = str(data).upper()
+   print("sending: " + str(data))
+   c.send(data.encode())
+c.close()
+print("Done Recieving")
+c.send("Thank you for connecting")  
 
-   while (True):       
-        l = sc.recv(1024)
-        while (l):
-            f.write(l)
-            l = sc.recv(1024)
-   f.close()
-
-
-   c.close()
-
-   s.close()       
+c.close()
+       
