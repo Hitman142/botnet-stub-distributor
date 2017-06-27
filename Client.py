@@ -3,10 +3,11 @@ from time import sleep
 s = socket.socket()
 
 host = socket.gethostname()
+host2 = 'y700-PF0FQPAW'
 
 port = 1234
 
-s.connect((host, port))
+s.connect((host2, port))
 print("-->")
 i = input()
 print("Sending data")

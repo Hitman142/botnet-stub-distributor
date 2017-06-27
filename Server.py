@@ -3,7 +3,7 @@ import socket
 s = socket.socket()
 
 host = socket.gethostname()
-
+print(host)
 port = 1234
 
 s.bind((host, port))
