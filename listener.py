@@ -1,22 +1,25 @@
 import socket, winsound
 from time import sleep
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-host = socket.gethostbyname(socket.gethostname())
-host2 = "y700-PF0FQPAW"
-host3 = "y700-PF0FVLBY"
+s2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+host = socket.gethostname()
 print(host)
-ip = "10.217.19.34"
-port = 1234
+port2 = 12345
 
-s.connect((host, port))
-while 1:
-    msg = input("Command To Send: ")
+s2.bind((host, port2))
+s2.listen(5)
+
+while True:
+    c2, addr = s2.accept()
+    print('Got connection from', addr)
+    a = c2.recv(50)
+    print('Received message == ',a)
+
+
+
+    c2.send(a)
+    c2.close()
     
-       
-    s.send(bytes(msg, 'utf-8'))
-    if "close" in msg:
-       winsound.PlaySound("roblox.wav", winsound.SND_FILENAME)
        
 
 
