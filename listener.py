@@ -12,7 +12,7 @@ s2.listen(5)
 while True:
     c2, addr = s2.accept()
     print('Got connection from', addr)
-    a = c2.recv(50)
+    a = c2.recv(4096)
     print('Received message == ',a)
 
 
