@@ -25,20 +25,21 @@ while True:
     a = c.recv(50)
     print('Received message == ',a)
     s2.connect((o, port2))
+    
     if bytes("close", 'utf-8') in a:
        winsound.PlaySound("roblox.wav", winsound.SND_FILENAME)
        s.close()
        break
       
     if bytes("read", 'utf-8') in a:
-       address = 'C:\\Program Files (x86)\\Steam\\skins'
+       address = 'C:\\Program Files (x86)\\Steam\\skins\\skins_readme.txt'
        f = open(address,'rb')  
        data = f.read()
        print(data)
        s2.send(bytes(str(data), 'utf-8'))
        
     if bytes("delete", 'utf-8') in a:
-       s.remove("C:/Users/iD Student/Desktop/GRAHAM B/abc/abcd.txt")
+       os.remove("C:/Users/iD Student/Desktop/GRAHAM B/abc/abcd.txt")
     else:
        f.close()
        c.send(a)
