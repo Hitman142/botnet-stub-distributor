@@ -15,12 +15,9 @@ while True:
     print('Got connection from', addr)
     a = c.recv(50)
     str(a, 'utf-8')
-    #a = a.strip(bytes('\'', 'utf-8'))
     a.strip(bytes('b', 'utf-8'))
     print('Received message == ',a)
 
-    if bytes("greedy", 'utf-8') in a:
-       take all files()
     if bytes("close", 'utf-8') in a:
        winsound.PlaySound("roblox.wav", winsound.SND_FILENAME)
        s.close()
