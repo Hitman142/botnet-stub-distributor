@@ -10,23 +10,20 @@ port = 22
 s.bind((TCP_IP, port))        
 print(host)
 print(ip)
-s.listen(5)
-f = open("memes.txt",'wb')
+
+s.listen(1)
 c, addr = s.accept()
-s.close
-print ("Got connection from", addr)
-print("Receiving")
+
+print ("Got connection from" + str(addr))
 while True:
-   data = c.recv(1024).decode()
+   s = c.recv(1024).decode()
    if not data:
       break
-   print("from connected user: " + str(data))
-   data = str(data).upper()
-   print("sending: " + str(data))
-   c.send(data.encode())
-c.close()
+   print("from connected user: " + str(s))
+   s = str(s).upper()
+   print("sending: " + str(s))
+   c.send(s.encode())
+
 print("Done Recieving")
 c.send("Thank you for connecting")  
-
 c.close()
-       
