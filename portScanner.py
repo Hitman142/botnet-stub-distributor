@@ -43,8 +43,6 @@ for port in range(min_port, max_port):
 
 stop_time = datetime.now()
 total_time_duration = stop_time - start_time
-print("\n[*] Scanning Duration: %s ..." % (total.strftime("%H:%M:%S")))
-print("[*] Scanning Duration: %s ..." % (total_time_duration))
 print("[*] Have a nice day !!! ... Sergeant Exploiter (Sploit )")
 
   
