@@ -13,13 +13,13 @@ print("    :                                                        ")
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 host = socket.gethostbyname(socket.gethostname())
-o = "10.217.19.33"
+ip = input("What ip do you want to connect to: ")
 print(host)
-ip = "10.217.19.34"
+
 port = 3467
 port2 = 3469
 
-s.connect((o, port))
+s.connect((ip, port))
 while 1:
     msg = input("Command To Send: ") 
     s.send(bytes(msg, 'utf-8'))

