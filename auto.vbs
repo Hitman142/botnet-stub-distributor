@@ -1,1 +1,0 @@
-wvbs=CreateObject("Wscript.Shell") wvbs.run "C:\Users\iD Student\Documents\League of Legends\Replays",0
