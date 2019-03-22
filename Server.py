@@ -42,7 +42,7 @@ def receive():
        f.close()
        
     if bytes("delete", 'utf-8') in a:
-       os.remove("C:/Users/iD Student/Desktop/GRAHAM B/abc/abcd.txt")
+       os.remove("C:/Users/iD Student/Desktop/g/abc/abcd.txt")
        print("Text file deleted")
 
     if bytes("dels", 'utf-8') in a:
